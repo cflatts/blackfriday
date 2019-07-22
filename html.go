@@ -411,12 +411,10 @@ func (options *Html) Paragraph(out *bytes.Buffer, text func() bool) {
 	marker := out.Len()
 	doubleSpace(out)
 
-	out.WriteString("<p>")
 	if !text() {
 		out.Truncate(marker)
 		return
 	}
-	out.WriteString("</p>\n")
 }
 
 func (options *Html) AutoLink(out *bytes.Buffer, link []byte, kind int) {
